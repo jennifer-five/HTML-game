@@ -9,7 +9,7 @@ for(c=0;c<7;c++ ){
         bricks[c][r]= {x:0 ,y:0,z:1 } ; 
     } 
 }
-
+//draw brick in size of 20*50
 function  drawbrick( ){ 
    
     for(c = 0;c<7;c++ ){ 
@@ -32,6 +32,7 @@ function  drawbrick( ){
 
 
 //code of the ball
+//the move path , size and color of the ball
 var x=175;
 var y=400;
 var changx=2;
@@ -55,7 +56,7 @@ function paddle() {
 var left;
 var right;
  
-
+// read the kaypad action the set the moving path of the ball
 addEventListener("keydown", function(event){
 if(event.keyCode == 39) {
         right=1;
@@ -73,6 +74,7 @@ if(event.keyCode == 39) {
     }
 }) ;
 //code of mouse
+//check the range of the mouse
 function mouseMoving(event) {
     var mouseX = event.clientX-canvas.offsetLeft;
     if(mouseX> 0 && mouseX <350) {
@@ -111,6 +113,7 @@ function move(){
     drawBall();
     paddle(); 
     touch();
+    //if the ball touch the wall, then change the direction of the ball
     if(x + changx > 340 || x + changx < 10) {
         changx = -changx;
     }
